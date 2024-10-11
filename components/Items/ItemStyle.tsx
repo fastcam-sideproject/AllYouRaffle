@@ -142,7 +142,7 @@ export default function ItemStyle({
         <div className="w-full bg-gray-300 rounded-full h-3 overflow-hidden ">
           <div
             className={`h-full transition-all duration-300 ${
-              percentageComplete === 100 ? 'bg-secondary' : 'bg-primary'
+              percentageComplete === 100 ? 'bg-secondary' : 'bg-primary-30'
             }`}
             style={{ width: `${percentageComplete}%` }}
           />
@@ -156,7 +156,7 @@ export default function ItemStyle({
             width="auto"
             fontSize="base"
             className={`mt-2 px-2 py-1 ${
-              percentageComplete === 100 ? 'bg-secondary' : 'bg-primary'
+              percentageComplete === 100 ? 'bg-secondary' : 'bg-primary-30'
             } text-white rounded w-full`}
             onClick={percentageComplete !== 100 ? handleToPurchase : handleImageClick}
           />
@@ -168,7 +168,7 @@ export default function ItemStyle({
             width="auto"
             fontSize="base"
             className={`mt-2 px-2 py-1 ${
-              percentageComplete === 100 ? 'bg-secondary' : 'bg-primary'
+              percentageComplete === 100 ? 'bg-secondary' : 'bg-primary-30'
             } text-white rounded w-full`}
             onClick={percentageComplete !== 100 ? handleEnterRaffle : handleImageClick}
           />
