@@ -10,22 +10,12 @@ const pretendard = localFont({
     {
       path: '../public/fonts/Pretendard-Regular.otf',
       weight: '400',
-      style: 'normal',
+      style: 'regular',
     },
     {
-      path: '../public/fonts/Pretendard-Medium.otf',
-      weight: '500',
-      style: 'normal',
-    },
-    {
-      path: '../public/fonts/Pretendard-Bold.otf',
-      weight: '700',
-      style: 'normal',
-    },
-    {
-      path: '../public/fonts/Pretendard-Black.otf',
-      weight: '900',
-      style: 'normal',
+      path: '../public/fonts/Pretendard-SemiBold.otf',
+      weight: '600',
+      style: 'semi-bold',
     },
   ],
   display: 'swap',
