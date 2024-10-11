@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import dynamic from 'next/dynamic';
 import Button from '../../lib/common/Button';
 import useAuthStore from '../../lib/store/useAuthStore';
 import NumberGuessingGame from '../NumberGuessingGame';
@@ -10,11 +9,6 @@ import ClickSpeedTest from '../ClickSpeedTestGame';
 
 export default function HomeHero() {
   const [activeGame, setActiveGame] = useState<string | null>(null);
-
-  /**
-   * @description breakoutGame 컴포넌트를 클라이언트에서만 렌더링 되도록 dynamic import 적용
-   */
-  const BreakoutGame = dynamic(() => import('../BreakoutGame'), { ssr: false });
 
   const userToken = useAuthStore((state) => state.userToken);
 
@@ -27,14 +21,7 @@ export default function HomeHero() {
       return;
     }
 
-    const games = [
-      'numberGuessing',
-      'memoryCard',
-      'numberBaseball',
-      'catchGame',
-      'clickSpeedTest',
-      'breakoutGame',
-    ];
+    const games = ['numberGuessing', 'memoryCard', 'numberBaseball', 'catchGame', 'clickSpeedTest'];
     const randomGame = games[Math.floor(Math.random() * games.length)];
     setActiveGame(randomGame);
   };
@@ -79,9 +66,6 @@ export default function HomeHero() {
       )}
       {userToken && activeGame === 'clickSpeedTest' && (
         <ClickSpeedTest onClose={() => setActiveGame(null)} />
-      )}
-      {userToken && activeGame === 'breakoutGame' && (
-        <BreakoutGame onClose={() => setActiveGame(null)} />
       )}
     </section>
   );
