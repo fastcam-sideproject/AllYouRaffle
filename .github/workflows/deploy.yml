@@ -66,4 +66,5 @@ jobs:
             pm2 stop all || true
             pm2 start npm -- start
             pm2 save
+            find /home/ubuntu/app -name "*.tar.gz" -type f -delete
             exit
