@@ -1,4 +1,17 @@
 export default class MainGame extends Phaser.Scene {
+  emojis!: Phaser.GameObjects.Group;
+  circle1!: Phaser.GameObjects.Arc;
+  circle2!: Phaser.GameObjects.Arc;
+  child1!: Phaser.GameObjects.Sprite;
+  child2!: Phaser.GameObjects.Sprite;
+  selectedEmoji!: Phaser.GameObjects.Sprite | null;
+  matched!: boolean;
+  score!: number;
+  highscore!: number;
+  scoreText!: Phaser.GameObjects.Text;
+  timer!: Phaser.Time.TimerEvent;
+  timerText!: Phaser.GameObjects.Text;
+
   constructor() {
     super('MainGame');
 
@@ -51,7 +64,12 @@ export default class MainGame extends Phaser.Scene {
       fontSize: 48,
       color: '#ffffff',
       fontStyle: 'bold',
-      padding: 16,
+      padding: {
+        left: 16,
+        right: 16,
+        top: 16,
+        bottom: 16,
+      },
       shadow: {
         color: '#000000',
         fill: true,
@@ -64,7 +82,7 @@ export default class MainGame extends Phaser.Scene {
     this.timerText = this.add.text(20, 20, '30:00', fontStyle);
     this.scoreText = this.add.text(530, 20, 'Found: 0', fontStyle);
 
-    let children = this.emojis.getChildren();
+    let children = this.emojis.getChildren() as Phaser.GameObjects.Sprite[];
 
     children.forEach((child) => {
       child.setInteractive();
@@ -87,7 +105,7 @@ export default class MainGame extends Phaser.Scene {
     this.sound.play('countdown', { delay: 27 });
   }
 
-  selectEmoji(pointer, emoji) {
+  selectEmoji(pointer: Phaser.Input.Pointer, emoji: Phaser.GameObjects.Sprite) {
     if (this.matched) {
       return;
     }
@@ -158,7 +176,7 @@ export default class MainGame extends Phaser.Scene {
 
     let frames = Phaser.Utils.Array.NumberArray(1, 40);
     let selected = Phaser.Utils.Array.NumberArray(0, 15);
-    let children = this.emojis.getChildren();
+    let children = this.emojis.getChildren() as Phaser.GameObjects.Sprite[];
 
     //  Now we pick 16 random values, removing each one from the array so we can't pick it again
     //  and set those into the sprites
@@ -170,8 +188,8 @@ export default class MainGame extends Phaser.Scene {
     }
 
     //  Finally, pick two random children and make them a pair:
-    let index1 = Phaser.Utils.Array.RemoveRandomElement(selected);
-    let index2 = Phaser.Utils.Array.RemoveRandomElement(selected);
+    let index1: any = Phaser.Utils.Array.RemoveRandomElement(selected);
+    let index2: any = Phaser.Utils.Array.RemoveRandomElement(selected);
 
     this.child1 = children[index1];
     this.child2 = children[index2];

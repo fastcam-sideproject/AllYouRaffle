@@ -8,7 +8,7 @@ import MainGame from '@/components/Emoji/MainGame';
 import Boot from '@/components/Emoji/Boot';
 
 export default function EmojiGame() {
-  const gameRef = useRef(null);
+  const gameRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {

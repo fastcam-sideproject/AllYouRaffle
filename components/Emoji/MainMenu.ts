@@ -1,8 +1,7 @@
 export default class MainMenu extends Phaser.Scene {
+  music!: Phaser.Sound.BaseSound;
   constructor() {
     super('MainMenu');
-
-    this.music;
   }
 
   create() {
@@ -14,12 +13,17 @@ export default class MainMenu extends Phaser.Scene {
       duration: 1000,
     });
 
-    const fontStyle = {
+    const fontStyle: Phaser.Types.GameObjects.Text.TextStyle = {
       fontFamily: 'Arial',
       fontSize: 48,
       color: '#ffffff',
       fontStyle: 'bold',
-      padding: 16,
+      padding: {
+        left: 16,
+        right: 16,
+        top: 16,
+        bottom: 16,
+      },
       shadow: {
         color: '#000000',
         fill: true,
@@ -34,7 +38,8 @@ export default class MainMenu extends Phaser.Scene {
     let logo = this.add.image(400, -200, 'logo');
 
     if (!this.music) {
-      this.music = this.sound.play('music', { loop: true });
+      this.music = this.sound.add('music', { loop: true });
+      this.music.play();
     }
 
     this.tweens.add({

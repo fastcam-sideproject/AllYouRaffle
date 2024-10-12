@@ -1,6 +1,8 @@
 export default class Preloader extends Phaser.Scene {
+  loadText!: Phaser.GameObjects.Text;
   constructor() {
     super('Preloader');
+    this.loadText;
   }
 
   preload() {
