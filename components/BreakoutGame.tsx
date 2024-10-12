@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useRef } from 'react';
 import * as Phaser from 'phaser';
 
@@ -125,15 +127,15 @@ class Breakout extends Phaser.Scene {
   }
 }
 
-export default function BreakoutGame({ onClose }: { onClose: () => void }) {
+export default function BreakoutGame() {
   const gameRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const config = {
         type: Phaser.AUTO,
-        width: 800,
-        height: 600,
+        width: window.innerWidth < 768 ? window.innerWidth : 800,
+        height: window.innerHeight < 768 ? window.innerHeight : 600,
         parent: gameRef.current,
         scene: [Breakout],
         physics: {
@@ -149,20 +151,10 @@ export default function BreakoutGame({ onClose }: { onClose: () => void }) {
     }
   }, []);
 
-  const handleCloseModal = () => {
-    onClose();
-  };
-
   return (
-    <main className="fixed inset-0 flex items-center justify-center z-[1000] bg-gray-600 bg-opacity-50">
-      <section className="relative rounded bg-white p-6">
-        <div className="absolute top-1 right-1 z-10">
-          <button onClick={handleCloseModal}>
-            <img src="/icon/cancel.svg" alt="닫기 아이콘" />
-          </button>
-        </div>
-        <div ref={gameRef} className="w-full h-full" />
-      </section>
-    </main>
+    <div className="flex flex-col items-center justify-center w-full h-full">
+      <h1 className="text-3xl text-center mb-4">벽돌 부수기</h1>
+      <div ref={gameRef} className="w-full h-full md:w-[800px] md:h-[600px]" />
+    </div>
   );
 }
