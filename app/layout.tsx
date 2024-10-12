@@ -8,12 +8,12 @@ import './globals.css';
 const pretendard = localFont({
   src: [
     {
-      path: '../public/fonts/Pretendard-Regular.otf',
+      path: '../public/fonts/Pretendard-Regular.woff2',
       weight: '400',
       style: 'regular',
     },
     {
-      path: '../public/fonts/Pretendard-SemiBold.otf',
+      path: '../public/fonts/Pretendard-SemiBold.woff2',
       weight: '600',
       style: 'semi-bold',
     },
