@@ -16,8 +16,8 @@
 
 <br/>
 <div align="center">
-  <img src="./public/image/docs/home_main.png" width="50%" />
-  <img src="./public/image/docs/popular_item.png" width="50%" />
+  <img src="https://github.com/fastcam-sideproject/RaffleReadmeImgs/blob/main/Docs/home_main.png" width="50%" />
+  <img src="https://github.com/fastcam-sideproject/RaffleReadmeImgs/blob/main/Docs/popular_item.png" width="50%" />
 </div>
 
 <br/><br />
@@ -54,7 +54,7 @@ npm run dev
      <td align="center" valign="middle">
         <div>
           <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/1x1.png" width="500" height="1" />
-          <img width="50" src="./public/image/logo/nextjs.png" />
+          <img width="50" src="https://github.com/fastcam-sideproject/RaffleReadmeImgs/blob/main/Icons/nextjs.png" />
           <p align="center">
             Next.js
           </p>
@@ -72,7 +72,7 @@ npm run dev
       <td align="center" valign="middle">
         <div>
           <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/1x1.png" width="500" height="1" />
-          <img width="50" src="./public/image/logo/webpack.png" />
+          <img width="50" src="https://github.com/fastcam-sideproject/RaffleReadmeImgs/blob/main/Icons/webpack.png" />
           <p align="center">
             Webpack
           </P>
@@ -81,7 +81,7 @@ npm run dev
       <td align="center" valign="middle">
         <div>
           <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/1x1.png" width="500" height="1" />
-          <img width="40" src="./public/image/logo/tailwindcss.png" />
+          <img width="40" src="https://github.com/fastcam-sideproject/RaffleReadmeImgs/blob/main/Icons/tailwindcss.png" />
           <p align="center">
             TailwindCSS
           </p>
@@ -90,7 +90,7 @@ npm run dev
       <td align="center" valign="middle">
         <div>
           <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/1x1.png" width="500" height="1" />
-          <img width="70" src="./public/image/logo/zustand.png" />
+          <img width="70" src="https://github.com/fastcam-sideproject/RaffleReadmeImgs/blob/main/Icons/zustand.png" />
           <p align="center">
             Zustand
           </p>
