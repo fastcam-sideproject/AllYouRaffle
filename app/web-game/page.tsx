@@ -7,9 +7,9 @@ const BreakoutGame = dynamic(() => import('@/components/BreakoutGame'), { ssr: f
 
 export default function page() {
   return (
-    <div>
+    <>
       <EmojiGame />
       <BreakoutGame />
-    </div>
+    </>
   );
 }
