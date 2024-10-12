@@ -37,14 +37,14 @@ export default function HomeHero() {
           <div className="bg-white rounded-lg shadow-lg p-6">
             <h3 className="text-xl font-semibold mb-4">랜덤 게임 🎲</h3>
             <p className="mb-4">행운을 시험해보세요! 랜덤으로 게임이 선택됩니다.</p>
-            <p className="text-primary">
+            <p className="text-primary-30">
               앱 심사중으로 쿠폰이 발급되질 않습니다! 심사후에 이용해주세요!
             </p>
             <Button
               label="랜덤 게임 시작"
               width="full"
               fontSize="base"
-              className="text-white font-bold bg-primary hover:bg-blue-500"
+              className="text-white font-bold bg-primary-30 hover:bg-blue-500"
               type="button"
               onClick={handleRandomGameStart}
             />
