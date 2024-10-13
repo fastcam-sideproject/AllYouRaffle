@@ -26,7 +26,6 @@ export default function NumberGuessingGame({ onClose }: { onClose: () => void })
 
     if (guessNumber === targetNumber) {
       setMessage(`축하합니다. ${attempts + 1}번 만에 맞추셨습니다.`);
-      alert('앱 심사중으로 쿠폰이 발급되질 않습니다! 심사후에 이용해주세요!');
       setGameOver(true);
 
       // 성공 시 모바일에 알림 전송
