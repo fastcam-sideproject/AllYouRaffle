@@ -10,7 +10,6 @@ export default function HomePage() {
       <HeaderNav />
       <HomeMain />
       <AuthHandler />
-      <SearchBar placeholder="Search..." className="w-[200px]" />
     </>
   );
 }
