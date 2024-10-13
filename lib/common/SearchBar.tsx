@@ -38,7 +38,7 @@ const SearchBar = React.forwardRef<HTMLInputElement, React.InputHTMLAttributes<H
         {value && (
           <button
             onClick={handleClear}
-            className="absolute right-3 rounded-full hover:bg-slate-100"
+            className="absolute right-3 rounded-full focus:bg-neutral-30"
             type="button"
           >
             <div className="p-2">
