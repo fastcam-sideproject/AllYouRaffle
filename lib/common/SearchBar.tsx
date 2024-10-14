@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Search, X } from 'lucide-react';
+import { AlertCircle, Search, X } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 
 interface SearchBarProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -52,7 +52,10 @@ const SearchBar = React.forwardRef<HTMLInputElement, SearchBarProps>(
         </div>
         {error && (
           <div className="w-full rounded-4 bg-error-5 text-error-30 text-[13px] mt-1 p-2">
-            {error}
+            <div className="flex items-center gap-3">
+              <AlertCircle className="w-5 h-5 text-error-30" />
+              {error}
+            </div>
           </div>
         )}
       </div>
