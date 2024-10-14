@@ -4,8 +4,12 @@ import React, { useState } from 'react';
 import { Search, X } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 
-const SearchBar = React.forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInputElement>>(
-  (props, ref) => {
+interface SearchBarProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  error?: string;
+}
+
+const SearchBar = React.forwardRef<HTMLInputElement, SearchBarProps>(
+  ({ error, className, ...props }, ref) => {
     const [value, setValue] = useState('');
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -23,28 +27,33 @@ const SearchBar = React.forwardRef<HTMLInputElement, React.InputHTMLAttributes<H
     };
 
     return (
-      <div className={`relative flex items-center ${props.className || 'w-full'}`}>
-        <div className="p-4 absolute left-1">
-          <Search className="h-5 w-6" />
+      <div className={`${className || 'w-full'}`}>
+        <div className={'relative flex items-center  w-full'}>
+          <div className="p-4 absolute left-1">
+            <Search className="h-5 w-5" />
+          </div>
+          <Input
+            {...props}
+            ref={ref}
+            value={value}
+            onChange={handleChange}
+            className={`h-[50px] rounded-5 focus:outline-none ${error ? 'focus:border focus:border-error-40' : 'focus:border focus:border-primary-40'}`}
+            placeholder={props.placeholder || 'Searchbar'}
+          />
+          {value && (
+            <button
+              onClick={handleClear}
+              className={`absolute right-3 rounded-10 ${error ? 'bg-error-40' : ''}`}
+              type="button"
+            >
+              <X className={`h-5 w-5 ${error ? 'text-neutral-0' : ''} `} />
+            </button>
+          )}
         </div>
-        <Input
-          {...props}
-          ref={ref}
-          value={value}
-          onChange={handleChange}
-          className="h-[50px] rounded-xl"
-          placeholder={props.placeholder || 'Searchbar'}
-        />
-        {value && (
-          <button
-            onClick={handleClear}
-            className="absolute right-3 rounded-full focus:bg-neutral-30"
-            type="button"
-          >
-            <div className="p-2">
-              <X className="h-5 w-6" />
-            </div>
-          </button>
+        {error && (
+          <div className="w-full rounded-4 bg-error-5 text-error-30 text-[13px] mt-1 p-2">
+            {error}
+          </div>
         )}
       </div>
     );
